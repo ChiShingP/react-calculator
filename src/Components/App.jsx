@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal"
 /*
 1. Display a calculator
   - Show a display window
