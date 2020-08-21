@@ -113,7 +113,7 @@ function App() {
             className="btn btn-primary btn-sizing"
             onClick={showHistory}
           >
-            HIST
+            MEM
           </button>
         </div>
         <div className="col-xs-6 padding-0" >
