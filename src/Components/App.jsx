@@ -113,7 +113,7 @@ function App() {
             className="btn btn-primary btn-sizing"
             onClick={showHistory}
           >
-            History
+            HIST
           </button>
         </div>
         <div className="col-xs-6 padding-0" >
@@ -130,8 +130,6 @@ function App() {
           <button
             type="button"
             className="btn btn-primary btn-sizing"
-            // style={{ backgroundColor: "black" }}
-
             onClick={clearEntry}
           >
             CE
@@ -325,7 +323,6 @@ function App() {
             type="button"
             className="btn btn-success btn-sizing"
             value="="
-
             onClick={updateCalculate}
           >
             =
