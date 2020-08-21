@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Modal from "react-bootstrap/Modal"
 /*
 1. Display a calculator
   - Show a display window
@@ -14,10 +15,11 @@ function App() {
   const [inputs, setInputs] = useState("");
   const [storedInput, setStoredInput] = useState("");
   const [storedOperator, setStoredOperator] = useState("");
+  const [history, setHisotry] = useState([]);
   var calculatedValue = "";
-
+  // const songURL = "./assets/SD.mp3";
   function updateInput(event) {
-    const { value } = event.target;
+    const { value } = event.currentTarget; //event.currenTarget for Material UI buttons
     setInputs(inputs + value);
   }
 
@@ -41,8 +43,14 @@ function App() {
   }
 
   //what if operation was pressed before?
-  function clearEntry(event) {
+  function clearEntry() {
     setInputs(inputs.substr(0, inputs.length - 1));
+  }
+
+  function showHistory() {
+    return (
+      <div></div>
+    )
   }
 
   function updateCalculate() {
@@ -70,104 +78,131 @@ function App() {
       default:
         calculatedValue = inputs;
     }
-
+    setHisotry((prevValue) => [...prevValue, calculatedValue]);
+    console.log("History Stored: " + history);
     setInputs(calculatedValue);
     setStoredInput(calculatedValue);
     setStoredOperator("");
   }
 
   return (
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm padding-0">
+    <div className="container-fluid container">
+      <div className="row">
+        <div className="col-sm padding-0">
           <input
-            class="input-calcdisplay form-control"
+            className="history-display form-control"
             type="text"
-            // value={inputDisplay}
+            value={history}
+            disabled
+          />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-sm padding-0">
+          <input
+            className="input-calcdisplay form-control"
+            type="text"
             value={inputs}
             disabled
           />
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-9 padding-0">
+      <div className="row">
+        <div className="col-xs-3 padding-0" >
           <button
             type="button"
-            class="btn btn-secondary btn-sizing"
+            className="btn btn-primary btn-sizing"
+            onClick={showHistory}
+          >
+            History
+          </button>
+        </div>
+        <div className="col-xs-6 padding-0" >
+          <button
+            type="button"
+            className="btn btn-primary btn-sizing"
+
             onClick={clearInput}
           >
             CLEAR
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-secondary btn-sizing"
-            value="<="
+            className="btn btn-primary btn-sizing"
+            // style={{ backgroundColor: "black" }}
+
             onClick={clearEntry}
           >
-            <h1> CE </h1>
+            CE
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-3 padding-0">
+      <div className="row">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="btn btn-danger btn-sizing"
             value="7"
+
             onClick={updateInput}
           >
             7
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger  btn-sizing"
             value="8"
+
             onClick={updateInput}
           >
             8
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="9"
+
             onClick={updateInput}
           >
             9
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-success btn-sizing"
+            className="btn btn-success btn-sizing"
             value="/"
+
             onClick={updateOperator}
           >
             /
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-3 padding-0">
+      <div className="row">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="4"
+
             onClick={updateInput}
           >
             4
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            class="  btn btn-danger btn-sizing"
             value="5"
+
             onClick={updateInput}
           >
             5
@@ -176,115 +211,129 @@ function App() {
         <div class="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            class="  btn btn-danger btn-sizing"
             value="6"
+
             onClick={updateInput}
           >
             6
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-success btn-sizing"
+            className="btn btn-success btn-sizing"
             value="*"
+
             onClick={updateOperator}
           >
             *
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-3 padding-0">
+      <div className="row">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="1"
+
             onClick={updateInput}
           >
             1
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="2"
+
             onClick={updateInput}
           >
             2
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="3"
+
             onClick={updateInput}
           >
             3
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-success btn-sizing"
+            className="btn btn-success btn-sizing"
             value="-"
+
             onClick={updateOperator}
           >
             -
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-3 padding-0">
+      <div className="row">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="0"
+
             onClick={updateInput}
           >
             0
           </button>
         </div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-primary btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="."
+
             onClick={decimalCount}
           >
             .
           </button>
         </div>
-        <div class="col-xs-3 padding-0"></div>
-        <div class="col-xs-3 padding-0">
+        <div className="col-xs-3 padding-0"></div>
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-success btn-sizing "
+            className="btn btn-success btn-sizing "
             value="+"
+
             onClick={updateOperator}
           >
             +
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-3 padding-0"></div>
-        <div class="col-xs-3 padding-0"></div>
-        <div class="col-xs-3 padding-0"></div>
-        <div class="col-xs-3 padding-0">
+      <div className="row">
+        <div className="col-xs-3 padding-0">
+          {/* <MusicControl
+            url={songURL}
+          /> */}
+        </div>
+        <div className="col-xs-3 padding-0"></div>
+        <div className="col-xs-3 padding-0"></div>
+        <div className="col-xs-3 padding-0">
           <button
             type="button"
-            class="btn btn-success btn-sizing"
+            className="btn btn-success btn-sizing"
             value="="
+
             onClick={updateCalculate}
           >
             =
           </button>
         </div>
       </div>
-      <div class="row"></div>
+      <div className="row"></div>
     </div>
   );
 }
