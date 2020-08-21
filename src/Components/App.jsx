@@ -77,7 +77,7 @@ function App() {
   }
 
   return (
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-sm padding-0">
           <input
