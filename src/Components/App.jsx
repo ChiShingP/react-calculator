@@ -90,7 +90,7 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-9 padding-0">
+        <div class="col-xs-9 padding-0">
           <button
             type="button"
             class="btn btn-secondary btn-sizing"
@@ -99,7 +99,7 @@ function App() {
             CLEAR
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-secondary btn-sizing"
@@ -111,7 +111,7 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -121,7 +121,7 @@ function App() {
             7
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -131,7 +131,7 @@ function App() {
             8
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -141,7 +141,7 @@ function App() {
             9
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-success btn-sizing"
@@ -153,7 +153,7 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -163,7 +163,7 @@ function App() {
             4
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -173,7 +173,7 @@ function App() {
             5
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -183,7 +183,7 @@ function App() {
             6
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-success btn-sizing"
@@ -195,7 +195,7 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -205,7 +205,7 @@ function App() {
             1
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -215,7 +215,7 @@ function App() {
             2
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -225,7 +225,7 @@ function App() {
             3
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-success btn-sizing"
@@ -237,7 +237,7 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -247,7 +247,7 @@ function App() {
             0
           </button>
         </div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-primary btn-sizing"
@@ -257,8 +257,8 @@ function App() {
             .
           </button>
         </div>
-        <div class="col-sm-3 padding-0"></div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0"></div>
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-success btn-sizing "
@@ -270,10 +270,10 @@ function App() {
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3 padding-0"></div>
-        <div class="col-sm-3 padding-0"></div>
-        <div class="col-sm-3 padding-0"></div>
-        <div class="col-sm-3 padding-0">
+        <div class="col-xs-3 padding-0"></div>
+        <div class="col-xs-3 padding-0"></div>
+        <div class="col-xs-3 padding-0"></div>
+        <div class="col-xs-3 padding-0">
           <button
             type="button"
             class="btn btn-success btn-sizing"
