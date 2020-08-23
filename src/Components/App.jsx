@@ -300,9 +300,6 @@ function App() {
       </Row>
       <Row>
         <Col xs={3} className=" padding-0">
-          {/* <MusicControl
-            url={songURL}
-          /> */}
         </Col>
         <Col xs={3} className=" padding-0"></Col>
         <Col xs={3} className=" padding-0"></Col>
