@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import HistoryPopUp from "./HistoryPopUp";
+import Container from "react-bootstrap/container"
+import Col from 'react-bootstrap/Col'
+import Row from "react-bootstrap/Row"
+import Button from "react-bootstrap/Button"
+
+
 /*
 1. Display a calculator
   - Show a display window
@@ -22,7 +29,7 @@ function App() {
     setInputs(inputs + value);
   }
 
-  function clearInput(event) {
+  function clearInput() {
     setInputs("");
     setStoredInput("");
     setStoredOperator("");
@@ -36,9 +43,8 @@ function App() {
   }
 
   function decimalCount() {
-    if (!inputs.includes(".")) {
-      setInputs(inputs + ".");
-    }
+    (!inputs.includes(".")) && (setInputs(inputs + "."));
+
   }
 
   //what if operation was pressed before?
@@ -46,37 +52,33 @@ function App() {
     setInputs(inputs.substr(0, inputs.length - 1));
   }
 
-  function showHistory() {
-    return (
-      <div></div>
-    )
-  }
-
   function updateCalculate() {
     switch (storedOperator) {
       case "/":
         calculatedValue = (
           parseFloat(storedInput, 10) / parseFloat(inputs, 10)
-        ).toString();
+        )
         break;
       case "*":
         calculatedValue = (
           parseFloat(storedInput, 10) * parseFloat(inputs, 10)
-        ).toString();
+        )
         break;
       case "-":
         calculatedValue = (
           parseFloat(storedInput, 10) - parseFloat(inputs, 10)
-        ).toString();
+        )
         break;
       case "+":
         calculatedValue = (
           parseFloat(storedInput, 10) + parseFloat(inputs, 10)
-        ).toString();
+        )
         break;
       default:
         calculatedValue = inputs;
     }
+
+    (storedOperator !== "") && (calculatedValue = calculatedValue.toExponential(8));
     setHisotry((prevValue) => [...prevValue, calculatedValue]);
     console.log("History Stored: " + history);
     setInputs(calculatedValue);
@@ -85,48 +87,34 @@ function App() {
   }
 
   return (
-    <div className="container-fluid container">
-      <div className="row">
-        <div className="col-sm padding-0">
-          <input
-            className="history-display form-control"
-            type="text"
-            value={history}
-            disabled
-          />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-sm padding-0">
+    // <div className="container-fluid container"> </div>
+    <Container fluid>
+      <Row>
+        <Col className="padding-0">
           <input
             className="input-calcdisplay form-control"
             type="text"
             value={inputs}
             disabled
           />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-3 padding-0" >
-          <button
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={3} className="padding-0" >
+          <HistoryPopUp
+            history={history}
+          />
+        </Col>
+        <Col xs={6} className="padding-0" >
+          <Button
             type="button"
-            className="btn btn-primary btn-sizing"
-            onClick={showHistory}
-          >
-            MEM
-          </button>
-        </div>
-        <div className="col-xs-6 padding-0" >
-          <button
-            type="button"
-            className="btn btn-primary btn-sizing"
-
+            className=" btn-sizing"
             onClick={clearInput}
           >
-            CLEAR
-          </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+            Clear
+          </Button>
+        </Col>
+        <Col xs={3} className="padding-0">
           <button
             type="button"
             className="btn btn-primary btn-sizing"
@@ -134,10 +122,10 @@ function App() {
           >
             CE
           </button>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-3 padding-0">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="btn btn-danger btn-sizing"
@@ -147,8 +135,8 @@ function App() {
           >
             7
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger  btn-sizing"
@@ -158,8 +146,8 @@ function App() {
           >
             8
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -169,8 +157,8 @@ function App() {
           >
             9
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="btn btn-success btn-sizing"
@@ -180,10 +168,10 @@ function App() {
           >
             /
           </button>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-3 padding-0">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -193,30 +181,30 @@ function App() {
           >
             4
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
-            class="  btn btn-danger btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="5"
 
             onClick={updateInput}
           >
             5
           </button>
-        </div>
-        <div class="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className="padding-0">
           <button
             type="button"
-            class="  btn btn-danger btn-sizing"
+            className="  btn btn-danger btn-sizing"
             value="6"
 
             onClick={updateInput}
           >
             6
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="btn btn-success btn-sizing"
@@ -226,10 +214,10 @@ function App() {
           >
             *
           </button>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-3 padding-0">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -239,8 +227,8 @@ function App() {
           >
             1
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -250,8 +238,8 @@ function App() {
           >
             2
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -261,8 +249,8 @@ function App() {
           >
             3
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="btn btn-success btn-sizing"
@@ -272,10 +260,10 @@ function App() {
           >
             -
           </button>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-3 padding-0">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -285,8 +273,8 @@ function App() {
           >
             0
           </button>
-        </div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="  btn btn-danger btn-sizing"
@@ -296,9 +284,9 @@ function App() {
           >
             .
           </button>
-        </div>
-        <div className="col-xs-3 padding-0"></div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0"></Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="btn btn-success btn-sizing "
@@ -308,17 +296,17 @@ function App() {
           >
             +
           </button>
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-xs-3 padding-0">
+        </Col>
+      </Row>
+      <Row>
+        <Col xs={3} className=" padding-0">
           {/* <MusicControl
             url={songURL}
           /> */}
-        </div>
-        <div className="col-xs-3 padding-0"></div>
-        <div className="col-xs-3 padding-0"></div>
-        <div className="col-xs-3 padding-0">
+        </Col>
+        <Col xs={3} className=" padding-0"></Col>
+        <Col xs={3} className=" padding-0"></Col>
+        <Col xs={3} className=" padding-0">
           <button
             type="button"
             className="btn btn-success btn-sizing"
@@ -327,10 +315,10 @@ function App() {
           >
             =
           </button>
-        </div>
-      </div>
-      <div className="row"></div>
-    </div>
+        </Col>
+      </Row>
+      <Row></Row>
+    </Container>
   );
 }
 

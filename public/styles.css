@@ -14,8 +14,9 @@ html body {
   /* /* margin: 2%; * */
   /* padding-left: 40%; */
   position: relative;
+  padding: 0%;
   width: 100%;
-  height: 100px;
+  height: 90px;
   font-size: 200%;
   color: black;
   text-align: center;
