@@ -88,7 +88,7 @@ function App() {
 
   return (
     // <div className="container-fluid container"> </div>
-    <Container fluid>
+    <Container fluid className="container">
       <Row>
         <Col className="padding-0">
           <input
