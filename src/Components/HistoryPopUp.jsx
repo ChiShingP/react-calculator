@@ -20,7 +20,7 @@ function MyVerticallyCenteredModal(props) {
                 {props.history.map(thisItem => {
                     return <p>{thisItem}</p>;
                 })}
-                <Button className="btn-sizing" variant="outline-light" onClick={props.onHide}>Close</Button>
+                <Button className="btn-close-modal" variant="outline-light" onClick={props.onHide}>Close</Button>
             </Modal.Body>
         </Modal>
     );
@@ -40,7 +40,7 @@ function HistoryPopUp(props) {
                 variant="outline-light"
                 onClick={handleClick}
             >
-                MEM
+                M
           </Button>
 
             <MyVerticallyCenteredModal
