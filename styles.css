@@ -18,7 +18,7 @@ html body {
   background-color: white;
   display: block;
   position: inherit;
-  padding: 0%;
+  padding: auto;
   width: 100%;
   height: 90px;
   font-size: 200%;
@@ -71,4 +71,8 @@ html body {
 
 .padding-0 {
   padding: 2%;
+}
+
+.btn-close-modal {
+  color: black
 }
