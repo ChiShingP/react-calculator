@@ -37,6 +37,14 @@ html body {
 
 }
 
+.btn-sizing::before,
+.btn-sizing::after {
+  /* content: ""; */
+  position: absolute;
+  transition: all 0.15s ease-in-out;
+
+}
+
 .btn-sizing:hover {
   margin: auto;
   color: black;
