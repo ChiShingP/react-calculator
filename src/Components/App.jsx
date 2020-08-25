@@ -4,7 +4,6 @@ import Container from "react-bootstrap/container"
 import Col from 'react-bootstrap/Col'
 import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
-import ParticleAnimation from "react-particle-animation"
 
 /*
 1. Display a calculator
