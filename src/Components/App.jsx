@@ -4,7 +4,7 @@ import Container from "react-bootstrap/container"
 import Col from 'react-bootstrap/Col'
 import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
-
+import ParticleAnimation from "react-particle-animation"
 
 /*
 1. Display a calculator
@@ -77,8 +77,9 @@ function App() {
       default:
         calculatedValue = inputs;
     }
-
-    (storedOperator !== "") && (calculatedValue = calculatedValue.toExponential(8));
+    if (String(calculatedValue).length > 8) {
+      (storedOperator !== "") && (calculatedValue = calculatedValue.toExponential(8));
+    }
     setHisotry((prevValue) => [...prevValue, calculatedValue]);
     console.log("History Stored: " + history);
     setInputs(calculatedValue);
@@ -89,8 +90,9 @@ function App() {
   return (
     // <div className="container-fluid container"> </div>
     <Container fluid className="container">
-      <Row>
-        <Col className="padding-0">
+
+      <Row className="displayShadow">
+        <Col className="padding-0 displayBlur">
           <input
             className="input-calcdisplay form-control"
             type="text"
@@ -107,195 +109,232 @@ function App() {
         </Col>
         <Col xs={6} className="padding-0" >
           <Button
-            type="button"
-            className=" btn-sizing"
-            onClick={clearInput}
+            className="btn-sizing" onClick={clearInput}
+            variant="outline-light"
           >
-            Clear
+            CLEAR
           </Button>
         </Col>
         <Col xs={3} className="padding-0">
-          <button
-            type="button"
+          <Button
+            type="Button"
+            variant="outline-light"
+
             className="btn btn-primary btn-sizing"
             onClick={clearEntry}
           >
             CE
-          </button>
+          </Button>
         </Col>
       </Row>
       <Row>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="btn btn-danger btn-sizing"
+          <Button
+            variant="outline-light"
+
+            type="Button"
+            className="btn btn-sizing"
+
+
+
             value="7"
 
             onClick={updateInput}
           >
             7
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger  btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
             value="8"
-
+            variant="outline-light"
             onClick={updateInput}
           >
             8
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className=" btn-sizing"
+            variant="outline-light"
             value="9"
 
             onClick={updateInput}
           >
             9
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="btn btn-success btn-sizing"
+          <Button
+            type="Button"
+            className="btn btn-sizing"
+
+            variant="outline-light"
             value="/"
 
             onClick={updateOperator}
           >
             /
-          </button>
+          </Button>
         </Col>
       </Row>
       <Row>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className="  btn-sizing"
+            variant="outline-light"
+
+
             value="4"
 
             onClick={updateInput}
           >
             4
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className=" btn-sizing"
+
+            variant="outline-light"
+
             value="5"
 
             onClick={updateInput}
           >
             5
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className="padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className=" btn-sizing"
+
+
+            variant="outline-light"
             value="6"
 
             onClick={updateInput}
           >
             6
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="btn btn-success btn-sizing"
+          <Button
+            type="Button"
+            className=" btn-sizing"
+            variant="outline-light"
+
             value="*"
 
             onClick={updateOperator}
           >
             *
-          </button>
+          </Button>
         </Col>
       </Row>
       <Row>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className=" btn-sizing"
+
+            variant="outline-light"
+
             value="1"
 
             onClick={updateInput}
           >
             1
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
+
+            variant="outline-light"
+
             value="2"
 
             onClick={updateInput}
           >
             2
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
+
+            variant="outline-light"
+
             value="3"
 
             onClick={updateInput}
           >
             3
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="btn btn-success btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
+
+            variant="outline-light"
             value="-"
 
             onClick={updateOperator}
           >
             -
-          </button>
+          </Button>
         </Col>
       </Row>
       <Row>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
+
+
+            variant="outline-light"
             value="0"
 
             onClick={updateInput}
           >
             0
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="  btn btn-danger btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
+
+            variant="outline-light"
+
             value="."
 
             onClick={decimalCount}
           >
             .
-          </button>
+          </Button>
         </Col>
         <Col xs={3} className=" padding-0"></Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="btn btn-success btn-sizing "
+          <Button
+            type="Button"
+            className="btn-sizing "
             value="+"
-
+            variant="outline-light"
             onClick={updateOperator}
           >
             +
-          </button>
+          </Button>
         </Col>
       </Row>
       <Row>
@@ -304,14 +343,16 @@ function App() {
         <Col xs={3} className=" padding-0"></Col>
         <Col xs={3} className=" padding-0"></Col>
         <Col xs={3} className=" padding-0">
-          <button
-            type="button"
-            className="btn btn-success btn-sizing"
+          <Button
+            type="Button"
+            className="btn-sizing"
+
+            variant="outline-light"
             value="="
             onClick={updateCalculate}
           >
             =
-          </button>
+          </Button>
         </Col>
       </Row>
       <Row></Row>
