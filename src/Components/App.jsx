@@ -83,6 +83,7 @@ function App() {
     setHisotry((prevValue) => [...prevValue, calculatedValue]);
     console.log("History Stored: " + history);
     setInputs(calculatedValue);
+    console.log(typeof (inputs) + "Value: " + inputs)
     setStoredInput(calculatedValue);
     setStoredOperator("");
   }
