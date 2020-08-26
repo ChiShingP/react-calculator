@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/react-calculator/static/js/main.3021a1b0.chunk.js",
+    "main.js.map": "/react-calculator/static/js/main.3021a1b0.chunk.js.map",
+    "runtime~main.js": "/react-calculator/static/js/runtime~main.00b8a6fe.js",
+    "runtime~main.js.map": "/react-calculator/static/js/runtime~main.00b8a6fe.js.map",
+    "static/js/2.537b0b85.chunk.js": "/react-calculator/static/js/2.537b0b85.chunk.js",
+    "static/js/2.537b0b85.chunk.js.map": "/react-calculator/static/js/2.537b0b85.chunk.js.map",
+    "index.html": "/react-calculator/index.html",
+    "precache-manifest.cc56413bfed07ba0f67433af48cdb7f1.js": "/react-calculator/precache-manifest.cc56413bfed07ba0f67433af48cdb7f1.js",
+    "service-worker.js": "/react-calculator/service-worker.js"
+  }
+}
