@@ -55,7 +55,7 @@ function Calculator(props) {
             props.setHeaderTitle("Here you go.");
 
             setTimeout(() => {
-                props.setHeaderTitle("Hi again, how may I help you!")
+                props.setHeaderTitle("Hi, how may I help you!")
             }, 3000);
             // } else {
             //     setTimeout(() => {
