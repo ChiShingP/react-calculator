@@ -105,3 +105,10 @@ footer {
 footer p {
   color: #ccc;
 }
+
+.modalPopUp {
+  position: absolute;
+  align-self: center;
+  margin: auto;
+  max-width: 40%;
+}
