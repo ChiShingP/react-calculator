@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal"
 
+//Used to display history of results
 function MyVerticallyCenteredModal(props) {
 
     return (
-        <Modal
+        <Modal className="modalPopUp"
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import HistoryPopUp from "./HistoryPopUp";
 import Container from "react-bootstrap/container"
 import Col from 'react-bootstrap/Col'
@@ -8,24 +7,27 @@ import Row from "react-bootstrap/Row"
 
 
 function Calculator(props) {
+    // Initiate Constants and Variables
     const [inputs, setInputs] = useState("");
     const [storedInput, setStoredInput] = useState("");
     const [storedOperator, setStoredOperator] = useState("");
     const [history, setHisotry] = useState([]);
-
     var calculatedValue = "";
-    // const songURL = "./assets/SD.mp3";
+
+    //Stores user inputs
     function updateInput(event) {
         const { value } = event.currentTarget; //event.currenTarget for Material UI buttons
         setInputs(inputs + value);
     }
 
+    //Clears all states
     function clearInput() {
         setInputs("");
         setStoredInput("");
         setStoredOperator("");
     }
 
+    //Stores operators
     function updateOperator(event) {
         const { value } = event.target;
         !(inputs === "") && setStoredInput(inputs); //Stores the first number if user had entered a number
@@ -33,15 +35,17 @@ function Calculator(props) {
         setInputs("");
     }
 
+    //Controls decimal input, Only allow entry if there isn't already a decimal point 
     function decimalCount() {
         (!inputs.includes(".")) && (setInputs(inputs + "."));
-
     }
 
-    //what if operation was pressed before?
+    //Clear Entry
     function clearEntry() {
         setInputs(inputs.substr(0, inputs.length - 1));
     }
+
+    //Silly function on denying calculation
     function decideCalculate() {
         let r = Math.floor(Math.random() * 10);
         if (r < 3) {
@@ -57,10 +61,10 @@ function Calculator(props) {
             //     setTimeout(() => {
             //         props.setHeaderTitle("Really? You can't do these simple math in your head?")
             //     }, 3000);
-
-
         }
     }
+
+    //Calculation 
     function updateCalculate() {
         switch (storedOperator) {
             case "/":

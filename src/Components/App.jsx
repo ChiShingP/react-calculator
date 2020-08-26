@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-
-
 import Header from "./Header"
 import Calculator from "./Calcluator"
 import Footer from "./Footer"
