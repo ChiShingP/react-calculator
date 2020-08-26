@@ -76,9 +76,9 @@ function App() {
       default:
         calculatedValue = inputs;
     }
-    if (String(calculatedValue).length > 8) {
-      (storedOperator !== "") && (calculatedValue = calculatedValue.toExponential(8));
-    }
+    // if (String(calculatedValue).length > 10) {
+    //   (storedOperator !== "") && (calculatedValue = calculatedValue.toExponential(8));
+    // }
     setHisotry((prevValue) => [...prevValue, calculatedValue]);
     console.log("History Stored: " + history);
     setInputs(calculatedValue);
